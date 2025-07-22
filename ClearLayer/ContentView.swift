@@ -1,128 +1,141 @@
-//
-//  ContentView.swift
-//  ClearLayer
-//
-//  Created by 中里祐希 on 2025/05/20.
-//
+////
+////  ContentView.swift
+////  ClearLayer
+////
+////  Created by 中里祐希 on 2025/05/20.
+////
 
 import SwiftUI
-import WebKit
 
 struct ContentView: View {
-    @State private var selectedColor: Color = .black
-    @State private var isEraserOn = false
-    @State private var clearCanvas = false
-    @State private var showDrawing = false
-    @State private var lineWidth: CGFloat = 3
-
-    @State private var lines: [DrawingCanvasView.Line] = []
-    @State private var currentLine = DrawingCanvasView.Line(points: [], color: .black, width: 3)
-    @State private var webView: WKWebView? = nil
-
-    @State private var mode: String = "youtube"
-    @State private var currentURL: URL = URL(string: "https://www.youtube.com")!
-    @State private var showModeText = false
-
+    @StateObject private var webVM = WebViewModel(initialURL: URL(string: "https://www.youtube.com")!)
+    @StateObject private var drawVM = DrawingViewModel()
+    @StateObject private var settings = SettingModel()
+    @FocusState private var urlFieldIsFocused: Bool
+    @State private var sweepOffset: CGSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+    @State private var delayedShow = false
+    @State private var showScreenshotOverlay = false
+    
+    @AppStorage("hasSeenTutorial") var hasSeenTutorial = false
+    @State private var isTutorialPresented = false
+    @State private var activeSheet: ActiveSheet? = nil
+    
+    
     var body: some View {
-        ZStack {
-            WebViewWrapper(
-                url: currentURL,
-                webView: $webView
-            )
-
-            if showDrawing {
-                DrawingCanvasView(
-                    strokeColor: isEraserOn ? .clear : selectedColor,
-                    isEraser: isEraserOn,
-                    clearTrigger: $clearCanvas,
-                    lines: $lines,
-                    currentLine: $currentLine,
-                    lineWidth: lineWidth
+        ZStack{
+            VStack(spacing: 0) {
+                BrowserTabBar(
+                    webVM: webVM,
+                    drawVM: drawVM,
+                    urlFieldIsFocused: _urlFieldIsFocused,
+                    activeSheet: $activeSheet
                 )
-                .allowsHitTesting(true)
-            }
-
-            VStack {
-                Spacer()
-
-                // ✅ 描画ツールバー内に統合されたモード切り替え含むUI
-                HStack {
-                    ColorPicker("", selection: $selectedColor)
-                        .labelsHidden()
-                        .frame(width: 44)
-
-                    Slider(value: $lineWidth, in: 1...10, step: 1)
-                        .frame(width: 100)
-
-                    Button(action: {
-                        isEraserOn.toggle()
-                    }) {
-                        Image(systemName: isEraserOn ? "eraser.fill" : "pencil")
+                .padding(8)
+                .background(drawVM.showDrawing
+                            ? Color.blue.opacity(0.3)
+                            : Color(UIColor.systemGray6))
+                .animation(Animation.easeInOut(duration: 0.4).delay(0.2), value: drawVM.showDrawing)
+                
+                ZStack {
+                    WebViewWrapper(viewModel: webVM)
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    ZStack {
+                        if delayedShow {
+                            DrawingCanvasView(drawVM: drawVM,settings: settings)
+                                .transition(.opacity)
+                        }
                     }
-
-                    Button(action: {
-                        clearCanvas.toggle()
-                    }) {
-                        Image(systemName: "trash")
-                    }
-
-                    Button(action: {
-                        showDrawing.toggle()
-                    }) {
-                        Image(systemName: showDrawing ? "eye.slash" : "eye")
-                    }
-
-                    Button(action: {
-                        webView?.evaluateJavaScript("""
-                            var video = document.querySelector('video');
-                            if (video) {
-                                if (video.paused) {
-                                    video.play();
-                                } else {
-                                    video.pause();
+                    // drawVM.showDrawing が変わったら delayedShow を遅延更新
+                    .onChange(of: drawVM.showDrawing) { oldValue, newValue in
+                        if newValue {
+                            // showDrawing == true のときは 遅延してフェードイン
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                withAnimation(.easeInOut(duration: 0.4)) {
+                                    delayedShow = true
                                 }
                             }
-                        """)
-                    }) {
-                        Image(systemName: "playpause")
-                    }
-
-                    // ✅ モードトグルをここに統合
-                    Picker("", selection: $mode) {
-                        Text("YT").tag("youtube")
-                        Text("Web").tag("browser")
-                    }
-                    .pickerStyle(.segmented)
-                    .frame(width: 120)
-                    .onChange(of: mode) {
-                        currentURL = URL(string: mode == "youtube" ? "https://www.youtube.com" : "https://www.google.com")!
-                        showDrawing = false
-                        withAnimation {
-                            showModeText = true
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                            withAnimation {
-                                showModeText = false
+                        } else {
+                            // showDrawing == false のときは即座に（または任意の delay で）フェードアウト
+                            withAnimation(.easeInOut(duration: 0.4)) {
+                                delayedShow = false
                             }
                         }
                     }
+                    
+                    VStack {
+                        Spacer()
+                        Toolbox(webVM: webVM, drawVM: drawVM)
+                            .padding(.trailing)
+                            .disabled(drawVM.triggerSweepEffect)
+                    }
+                    if showScreenshotOverlay {
+                        Color.black.opacity(0.4)
+                            .ignoresSafeArea()
+                            .transition(.opacity)
+                        
+                        Text("スクリーンショットを保存しました")
+                            .padding(.horizontal, 20)
+                            .padding(.vertical, 10)
+                            .background(.ultraThinMaterial)
+                            .cornerRadius(10)
+                            .foregroundColor(.white)
+                            .transition(.scale.combined(with: .opacity))
+                    }
                 }
-                .padding()
-                .background(.ultraThinMaterial)
-                .cornerRadius(12)
-                .padding(.bottom)
+                .overlay(
+                    Group {
+                        if drawVM.triggerSweepEffect {
+                            SweepEffectView(isActive: $drawVM.triggerSweepEffect,
+                                            sweepOffset: $sweepOffset,
+                                            isTurningOn: drawVM.showDrawing)
+                        }
+                    }
+                )
+                .frame(maxHeight: .infinity)
+                // ─── ここにバナー広告エリア ─────────────────────
+                BannerAdView(adUnitID: "ca-app-pub-8866672716864480/9063026208") // テスト用の広告ID ca-app-pub-8866672716864480~3476314147
+                    .frame(width: UIScreen.main.bounds.width, height: 60)
             }
-
-            if showModeText {
-                Text("mode: \(mode)")
-                    .font(.caption)
-                    .padding(6)
-                    .background(.ultraThinMaterial)
-                    .cornerRadius(10)
-                    .transition(.opacity)
-                    .padding(.top, 60)
+            // Safe area の下部にぴったり表示
+            .ignoresSafeArea(edges: .bottom)
+            .animation(.easeInOut(duration: 0.3), value: showScreenshotOverlay)
+            // ここで ViewModel の通知に応じてオンオフ
+            .onReceive(drawVM.$didTakeScreenshot) { didTake in
+                guard didTake else { return }
+                // オーバーレイを表示
+                showScreenshotOverlay = true
+                // 1秒後に自動で消す
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    withAnimation {
+                        showScreenshotOverlay = false
+                    }
+                    // フラグをクリア
+                    drawVM.didTakeScreenshot = false
+                }
+            }
+            .onAppear {
+                if !hasSeenTutorial {
+                    activeSheet = .tutorial
+                }
+            }
+            .sheet(item: $activeSheet) { sheet in
+                switch sheet {
+                case .settings:
+                    SettingsView(webVM: webVM,drawVM: drawVM, activeSheet: $activeSheet)
+                case .tutorial:
+                    TutorialPageView(activeSheet: $activeSheet)
+                case .privacy:
+                    PrivacyPolicyView()
+                }
             }
         }
-        .ignoresSafeArea()
     }
+}
+enum ActiveSheet: Identifiable {
+    case settings
+    case tutorial
+    case privacy
+    
+    var id: Int { hashValue }
 }

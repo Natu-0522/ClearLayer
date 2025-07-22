@@ -6,13 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B66B86FB2E2AE2FC00D9AE36 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = B66B86FA2E2AE2FC00D9AE36 /* GoogleMobileAds */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		B60094E82DDCCF8F00FD5D07 /* ClearLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B6F9762C2E2AA1AB0017D624 /* Exceptions for "ClearLayer" folder in "ClearLayer" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B60094E72DDCCF8F00FD5D07 /* ClearLayer */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B60094EA2DDCCF8F00FD5D07 /* ClearLayer */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B6F9762C2E2AA1AB0017D624 /* Exceptions for "ClearLayer" folder in "ClearLayer" target */,
+			);
 			path = ClearLayer;
 			sourceTree = "<group>";
 		};
@@ -23,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66B86FB2E2AE2FC00D9AE36 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +52,7 @@
 			children = (
 				B60094EA2DDCCF8F00FD5D07 /* ClearLayer */,
 				B60094E92DDCCF8F00FD5D07 /* Products */,
+				C07392324E7F7653C1FB06E2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -43,6 +62,13 @@
 				B60094E82DDCCF8F00FD5D07 /* ClearLayer.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C07392324E7F7653C1FB06E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -64,8 +90,6 @@
 				B60094EA2DDCCF8F00FD5D07 /* ClearLayer */,
 			);
 			name = ClearLayer;
-			packageProductDependencies = (
-			);
 			productName = ClearLayer;
 			productReference = B60094E82DDCCF8F00FD5D07 /* ClearLayer.app */;
 			productType = "com.apple.product-type.application";
@@ -94,6 +118,9 @@
 			);
 			mainGroup = B60094DF2DDCCF8F00FD5D07;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B66B86F92E2AE2FC00D9AE36 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B60094E92DDCCF8F00FD5D07 /* Products */;
 			projectDirPath = "";
@@ -256,6 +283,7 @@
 				DEVELOPMENT_TEAM = VM8R23JT5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClearLayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +312,7 @@
 				DEVELOPMENT_TEAM = VM8R23JT5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClearLayer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -324,6 +353,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B66B86F92E2AE2FC00D9AE36 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B66B86FA2E2AE2FC00D9AE36 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B66B86F92E2AE2FC00D9AE36 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B60094E02DDCCF8F00FD5D07 /* Project object */;
 }
