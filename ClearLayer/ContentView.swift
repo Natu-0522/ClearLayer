@@ -17,7 +17,6 @@ struct ContentView: View {
     @State private var showScreenshotOverlay = false
     
     @AppStorage("hasSeenTutorial") var hasSeenTutorial = false
-    @State private var isTutorialPresented = false
     @State private var activeSheet: ActiveSheet? = nil
     
     
@@ -94,7 +93,7 @@ struct ContentView: View {
                 )
                 .frame(maxHeight: .infinity)
                 // ─── ここにバナー広告エリア ─────────────────────
-                BannerAdView(adUnitID: "ca-app-pub-8866672716864480/9063026208") // テスト用の広告ID ca-app-pub-8866672716864480~3476314147
+                BannerAdView(adUnitID: "ca-app-pub-8866672716864480/9063026208")
                     .frame(width: UIScreen.main.bounds.width, height: 60)
             }
             // Safe area の下部にぴったり表示

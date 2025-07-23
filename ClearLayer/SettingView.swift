@@ -9,94 +9,6 @@ import SwiftUI
 import GoogleMobileAds
 import StoreKit
 
-// MARK: - 設定情報を保持するモデル
-class SettingModel: NSObject, ObservableObject, FullScreenContentDelegate {
-    /// パレットに表示する色のリスト（16進カラー文字列）
-    @Published var paletteColors: [String] = [
-        "#000000", "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF"
-    ]
-
-    /// ジェスチャ機能の解放済みフラグ
-    @AppStorage("gestureUnlockUntil") private var gestureUnlockUntil: Double = 0
-    @AppStorage("useDoubleTapGesture") var useDoubleTapGesture: Bool = false
-    @AppStorage("useTripleTapGesture") var useTripleTapGesture: Bool = false
-    @Published var isRewardAdReady: Bool = false
-    private var rewardedAd: RewardedAd?
-
-    var isGestureUnlocked: Bool {
-        Date().timeIntervalSince1970 < gestureUnlockUntil
-    }
-    
-    var remainingTimeText: String {
-        let remaining = gestureUnlockUntil - Date().timeIntervalSince1970
-        if remaining <= 0 {
-            return "ロックされています"
-        } else {
-            let minutes = Int(remaining) / 60
-            let seconds = Int(remaining) % 60
-            return String(format: "あと %02d:%02d", minutes, seconds)
-        }
-    }
-
-    func unlockForOneHour() {
-        gestureUnlockUntil = Date().addingTimeInterval(3600).timeIntervalSince1970
-    }
-    func updateUnlockStatusIfNeeded() {
-        if !isGestureUnlocked {
-            print("⏱ 時間切れ。トグルをリセットします")
-            useDoubleTapGesture = false
-            useTripleTapGesture = false
-            UserDefaults.standard.set(false, forKey: "toolToggle")
-            UserDefaults.standard.set(false, forKey: "screenshotToggle")
-        }
-    }
-
-    override init() {
-        super.init()
-        loadRewardAd()
-    }
-
-    func loadRewardAd() {
-        let request = Request()
-        RewardedAd.load(with: "ca-app-pub-8866672716864480/5675133898", request: request) { ad, error in
-            if let ad = ad {
-                self.rewardedAd = ad
-                ad.fullScreenContentDelegate = self
-                DispatchQueue.main.async {
-                    self.isRewardAdReady = true
-//                    print("✅ 広告ロード完了")
-                }
-            } else {
-//                print("❌ 広告ロード失敗: \(error?.localizedDescription ?? "不明なエラー")")
-                DispatchQueue.main.async {
-                    self.isRewardAdReady = false
-                }
-            }
-        }
-    }
-
-    func showRewardAd(from rootViewController: UIViewController) {
-        print("showRewardAd called")
-
-        guard let ad = rewardedAd else {
-//            print("❌ rewardedAd is nil!")
-            return
-        }
-
-        ad.present(from: rootViewController) {
-//            print("🎉 報酬発生")
-            self.unlockForOneHour()
-        }
-    }
-
-    func adDidDismissFullScreenContent(_ ad: FullScreenPresentingAd) {
-//        print("🔄 広告閉じたので再読み込み")
-        loadRewardAd()
-    }
-    
-    
-}
-
 // MARK: - 設定画面
 struct SettingsView: View {
     @StateObject var settings = SettingModel()
@@ -201,7 +113,11 @@ struct SettingsView: View {
             Section(header: Text("このアプリを応援する")) {
                 Button("アプリを評価する") {
                     if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                        SKStoreReviewController.requestReview(in: windowScene)
+                        if #available(iOS 18.0, *) {
+                            AppStore.requestReview(in: windowScene)
+                        } else {
+                            SKStoreReviewController.requestReview(in: windowScene)
+                        }
                     }
                 }
 
@@ -251,3 +167,92 @@ extension Color {
         self.init(.sRGB, red: r, green: g, blue: b, opacity: 1)
     }
 }
+
+// MARK: - 設定情報を保持するモデル
+class SettingModel: NSObject, ObservableObject, FullScreenContentDelegate {
+    /// パレットに表示する色のリスト（16進カラー文字列）
+    @Published var paletteColors: [String] = [
+        "#000000", "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF"
+    ]
+
+    /// ジェスチャ機能の解放済みフラグ
+    @AppStorage("gestureUnlockUntil") private var gestureUnlockUntil: Double = 0
+    @AppStorage("useDoubleTapGesture") var useDoubleTapGesture: Bool = false
+    @AppStorage("useTripleTapGesture") var useTripleTapGesture: Bool = false
+    @Published var isRewardAdReady: Bool = false
+    private var rewardedAd: RewardedAd?
+
+    var isGestureUnlocked: Bool {
+        Date().timeIntervalSince1970 < gestureUnlockUntil
+    }
+    
+    var remainingTimeText: String {
+        let remaining = gestureUnlockUntil - Date().timeIntervalSince1970
+        if remaining <= 0 {
+            return "ロックされています"
+        } else {
+            let minutes = Int(remaining) / 60
+            let seconds = Int(remaining) % 60
+            return String(format: "あと %02d:%02d", minutes, seconds)
+        }
+    }
+
+    func unlockForOneHour() {
+        gestureUnlockUntil = Date().addingTimeInterval(3600).timeIntervalSince1970
+    }
+    func updateUnlockStatusIfNeeded() {
+        if !isGestureUnlocked {
+            print("⏱ 時間切れ。トグルをリセットします")
+            useDoubleTapGesture = false
+            useTripleTapGesture = false
+            UserDefaults.standard.set(false, forKey: "toolToggle")
+            UserDefaults.standard.set(false, forKey: "screenshotToggle")
+        }
+    }
+
+    override init() {
+        super.init()
+        loadRewardAd()
+    }
+
+    func loadRewardAd() {
+        let request = Request()
+        RewardedAd.load(with: "ca-app-pub-8866672716864480/5675133898", request: request) { ad, error in
+            if let ad = ad {
+                self.rewardedAd = ad
+                ad.fullScreenContentDelegate = self
+                DispatchQueue.main.async {
+                    self.isRewardAdReady = true
+//                    print("✅ 広告ロード完了")
+                }
+            } else {
+//                print("❌ 広告ロード失敗: \(error?.localizedDescription ?? "不明なエラー")")
+                DispatchQueue.main.async {
+                    self.isRewardAdReady = false
+                }
+            }
+        }
+    }
+
+    func showRewardAd(from rootViewController: UIViewController) {
+        print("showRewardAd called")
+
+        guard let ad = rewardedAd else {
+//            print("❌ rewardedAd is nil!")
+            return
+        }
+
+        ad.present(from: rootViewController) {
+//            print("🎉 報酬発生")
+            self.unlockForOneHour()
+        }
+    }
+
+    func adDidDismissFullScreenContent(_ ad: FullScreenPresentingAd) {
+//        print("🔄 広告閉じたので再読み込み")
+        loadRewardAd()
+    }
+    
+    
+}
+

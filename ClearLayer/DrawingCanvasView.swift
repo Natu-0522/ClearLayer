@@ -8,13 +8,6 @@
 import SwiftUI
 import UIKit
 
-/// タップとストローク判定用の閾値
-fileprivate struct TapThreshold {
-    static let maxStrokeLength: CGFloat = 20        // 総描画長がこれ以下ならタップ
-    static let maxStartEndDistance: CGFloat = 10    // 開始⇔終了距離がこれ以下ならタップ
-    static let maxInterval: TimeInterval = 0.4      // 連続タップを判定する間隔
-}
-
 struct DrawingCanvasView: View {
     @ObservedObject var drawVM: DrawingViewModel
     @ObservedObject var settings: SettingModel
@@ -129,4 +122,11 @@ struct DrawingCanvasView: View {
             drawVM.lines = []
         }
     }
+}
+
+/// タップとストローク判定用の閾値
+fileprivate struct TapThreshold {
+    static let maxStrokeLength: CGFloat = 20        // 総描画長がこれ以下ならタップ
+    static let maxStartEndDistance: CGFloat = 10    // 開始⇔終了距離がこれ以下ならタップ
+    static let maxInterval: TimeInterval = 0.4      // 連続タップを判定する間隔
 }
