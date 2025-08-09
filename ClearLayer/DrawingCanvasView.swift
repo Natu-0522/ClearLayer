@@ -16,6 +16,7 @@ struct DrawingCanvasView: View {
     @State private var lastTapCount: Int = 0
     @State private var showSaveConfirmation = false
     @State private var doubleTapWork: DispatchWorkItem?
+    
 
     var body: some View {
         GeometryReader { geo in
@@ -127,6 +128,6 @@ struct DrawingCanvasView: View {
 /// タップとストローク判定用の閾値
 fileprivate struct TapThreshold {
     static let maxStrokeLength: CGFloat = 20        // 総描画長がこれ以下ならタップ
-    static let maxStartEndDistance: CGFloat = 10    // 開始⇔終了距離がこれ以下ならタップ
-    static let maxInterval: TimeInterval = 0.4      // 連続タップを判定する間隔
+    static let maxStartEndDistance: CGFloat = 2.5    // 開始⇔終了距離がこれ以下ならタップ
+    static let maxInterval: TimeInterval = 0.5      // 連続タップを判定する間隔
 }

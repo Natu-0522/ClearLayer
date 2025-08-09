@@ -31,7 +31,7 @@ struct ContentView: View {
                 )
                 .padding(8)
                 .background(drawVM.showDrawing
-                            ? Color.blue.opacity(0.3)
+                            ? Color.blue.opacity(0.5)
                             : Color(UIColor.systemGray6))
                 .animation(Animation.easeInOut(duration: 0.4).delay(0.2), value: drawVM.showDrawing)
                 
@@ -93,7 +93,7 @@ struct ContentView: View {
                 )
                 .frame(maxHeight: .infinity)
                 // ─── ここにバナー広告エリア ─────────────────────
-                BannerAdView(adUnitID: "ca-app-pub-8866672716864480/9063026208")
+                BannerAdView()
                     .frame(width: UIScreen.main.bounds.width, height: 60)
             }
             // Safe area の下部にぴったり表示
@@ -116,6 +116,7 @@ struct ContentView: View {
             .onAppear {
                 if !hasSeenTutorial {
                     activeSheet = .tutorial
+                    hasSeenTutorial = true
                 }
             }
             .sheet(item: $activeSheet) { sheet in

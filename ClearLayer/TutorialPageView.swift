@@ -13,36 +13,70 @@ struct TutorialPageView: View {
     let tutorialPages = [
         TutorialPage(
             title: "ClearLayerへようこそ",
-            description: """
-        ご利用ありがとうございます！
-
-        このアプリは、YouTube動画やWebページの上に  
-        透明な紙（レイヤー）を重ね  
-        直接文字や線を書き込めるようにした
-        学習・作業サポートツールです。
-        """
+            descriptionView: AnyView(
+                        VStack(spacing: 12) {
+                            Text("ご利用ありがとうございます！")
+                            Text("このアプリは、YouTubeやWebページに\n透明な紙（レイヤー）を重ね\n直接文字や線を書き込めるようにした\n学習・作業サポートツールです。")
+                        }
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
+                    )
         ),
         TutorialPage(
             title: "ツールボックスについて",
-            description: """
-        画面右下にあるアイコンが
-        ツールボックスです。
-
-        色や太さの変更、ペン・消しゴムの切り替え、
-        レイヤー表示の切り替えなどが可能です。
-        """
+            descriptionView: AnyView(
+                        VStack(spacing: 12) {
+                            Text("画面右下にツールボックスが表示されています。")
+                            HStack(spacing: 8) {
+                                Image(systemName: "pencil.tip")
+                                Text("/")
+                                Image(systemName: "eraser.fill")
+                                Text("ペンと消しゴムの切り替え")
+                            }
+                            HStack(spacing: 8) {
+                                Image(systemName: "trash")
+                                Text("リセット")
+                            }
+                            HStack(spacing: 8) {
+                                Image(systemName: "playpause")
+                                Text("色々な動画の再生・一時停止")
+                            }
+                            HStack(spacing: 8) {
+                                Image(systemName: "diamond.fill")
+                                Text("/")
+                                Image(systemName: "square.2.layers.3d.bottom.filled")
+                                Text("レイヤーの表示切り替え")
+                            }
+                            HStack(spacing: 8) {
+                                Text("また、ペンの色や太さを変更することもできます。")
+                            }
+                        }
+                        .multilineTextAlignment(.leading)
+                        .padding(.horizontal)
+                    )
         ),
         TutorialPage(
             title: "設定とご意見について",
-            description: """
-        画面左上の「︙」から設定画面を開けます。
-
-        ご意見や「こんな機能が欲しい」など、  
-        ぜひお問い合わせフォームからお聞かせください。
-
-        ClearLayerとともに、  
-        あなたの学びをもっとスマートに。
-        """
+            descriptionView: AnyView(
+                        VStack(spacing: 12) {
+                            HStack(spacing: 8) {
+                                Image(systemName: "gearshape.fill")
+                                Text("画面左上から設定を開けます。")
+                            }
+                            
+                            Text("ご意見や「こんな機能が欲しい」など、")
+                            Text("ぜひお問い合わせフォームからお聞かせください。\n\n")
+                            
+                            Text("ClearLayerとともに、\nあなたの学びをもっとスマートに。")
+                                .font(.body)
+                                .bold()
+                                .multilineTextAlignment(.leading)
+                                .padding(.horizontal)
+                            
+                        }
+                        .multilineTextAlignment(.leading)
+                        .padding(.horizontal)
+                    )
         )
     ]
 
@@ -57,9 +91,7 @@ struct TutorialPageView: View {
                             .font(.title2)
                             .bold()
 
-                        Text(tutorialPages[index].description)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal)
+                        tutorialPages[index].descriptionView
 
                         Spacer()
                     }
@@ -100,7 +132,7 @@ struct TutorialPageView: View {
 
 struct TutorialPage {
     let title: String
-    let description: String
+    let descriptionView: AnyView
 }
 
 struct TutorialSlide: View {

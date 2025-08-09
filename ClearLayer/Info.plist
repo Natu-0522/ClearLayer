@@ -4,8 +4,6 @@
 <dict>
 	<key>LSMinimumSystemVersion</key>
 	<string>16.0</string>
-	<key>UIDeviceFamily</key>
-	<string>2</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>NSUserTrackingUsageDescription</key>

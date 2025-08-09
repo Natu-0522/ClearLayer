@@ -10,8 +10,6 @@ import GoogleMobileAds
 
 /// SwiftUIから使えるバナー広告ビュー
 struct BannerAdView: UIViewRepresentable {
-    let adUnitID: String
-
     // バナー広告ビューの作成
     func makeUIView(context: Context) -> UIView {
         // ✅ Adaptiveサイズのバナーを画面幅に合わせて作成
@@ -19,7 +17,7 @@ struct BannerAdView: UIViewRepresentable {
         let bannerView = BannerView(adSize: adSize)
 
         // ✅ Ad Unit ID を設定（必須）
-        bannerView.adUnitID = adUnitID
+        bannerView.adUnitID = Constants.shared.bannerAdUnitID
 
         // ✅ 表示元のViewControllerを設定
         bannerView.rootViewController = UIApplication.shared

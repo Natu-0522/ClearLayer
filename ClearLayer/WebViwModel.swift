@@ -25,25 +25,14 @@ final class WebViewModel: NSObject, ObservableObject {
 
     /// WKWebView をセットして監視開始
     func attach(to webView: WKWebView) {
+        // 既存の監視があれば解除
+        detachObservers()
         self.webView = webView
         webView.load(URLRequest(url: url))
-
-        webView.addObserver(self,
-                    forKeyPath: #keyPath(WKWebView.url),
-                    options: [.new],
-                    context: &WebViewModel.kvoContext)
-        webView.addObserver(self,
-                    forKeyPath: #keyPath(WKWebView.title),
-                    options: [.new],
-                    context: &WebViewModel.kvoContext)
-        webView.addObserver(self,
-                    forKeyPath: #keyPath(WKWebView.canGoBack),
-                    options: [.new],
-                    context: &WebViewModel.kvoContext)
-        webView.addObserver(self,
-                    forKeyPath: #keyPath(WKWebView.canGoForward),
-                    options: [.new],
-                    context: &WebViewModel.kvoContext)
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.url), options: [.new], context: &WebViewModel.kvoContext)
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.title), options: [.new], context: &WebViewModel.kvoContext)
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.canGoBack), options: [.new], context: &WebViewModel.kvoContext)
+        webView.addObserver(self, forKeyPath: #keyPath(WKWebView.canGoForward), options: [.new], context: &WebViewModel.kvoContext)
     }
 
     /// 再読み込み

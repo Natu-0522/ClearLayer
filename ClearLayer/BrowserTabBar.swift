@@ -78,7 +78,7 @@ struct BrowserTabBar: View {
             Button(action: {
                 activeSheet = .settings
             }) {
-                Image(systemName: "ellipsis")
+                Image(systemName: "gearshape.fill")
                     .rotationEffect(.degrees(90)) // 縦の三点リーダ
                     .padding()
                     .foregroundColor(.primary)
