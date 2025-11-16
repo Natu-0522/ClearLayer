@@ -23,7 +23,7 @@ struct BrowserTabBar: View {
             Spacer()
             Group {
                 if drawVM.isEditingURL {
-                    TextField("URLを入力", text: $drawVM.urlString)
+                    TextField("browsertabbar.enter_url", text: $drawVM.urlString)
                         .focused($urlFieldIsFocused)
                         .onAppear {urlFieldIsFocused = true}
                         .onSubmit {

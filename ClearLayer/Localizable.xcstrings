@@ -1,0 +1,538 @@
+{
+  "sourceLanguage" : "ja",
+  "strings" : {
+    "" : {
+
+    },
+    "/" : {
+
+    },
+    "© 2025 ClearLayer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "© 2025 ClearLayer"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "© 2025 ClearLayer"
+          }
+        }
+      }
+    },
+    "⚙️ 設定" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚙️ Settings"
+          }
+        }
+      }
+    },
+    "browsertabbar.enter_url" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter URL"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URLを入力"
+          }
+        }
+      }
+    },
+    "ClearLayerとともに、\nあなたの学びをもっとスマートに。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ClearLayer helps make your learning smarter and more efficient."
+          }
+        }
+      }
+    },
+    "https://docs.google.com/forms/d/e/1FAIpQLSfdipzq4W-EEVMZAZ3U08hB3ucyinrNjNLU8hH2Bt1GOa5TRQ/viewform?usp=header" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://docs.google.com/forms/d/e/1FAIpQLScwunJ4PHw_MOTvwCpZZxcgf-uGF6-q-MGnsgNGAaND3yYT-g/viewform?usp=header"
+          }
+        }
+      }
+    },
+    "https://sites.google.com/view/clearlayer/%E3%83%9B%E3%83%BC%E3%83%A0" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "https://sites.google.com/view/clearlayer-en/%E3%83%9B%E3%83%BC%E3%83%A0"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "https://sites.google.com/view/clearlayer/%1$E3%83%9B%2$E3%83%BC%3$E3%83%4$A0"
+          }
+        }
+      }
+    },
+    "mode: %@" : {
+
+    },
+    "OK" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "Web" : {
+
+    },
+    "YouTube" : {
+
+    },
+    "YT" : {
+
+    },
+    "アプリを評価する" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate this app"
+          }
+        }
+      }
+    },
+    "アプリ情報" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About this app"
+          }
+        }
+      }
+    },
+    "お問い合わせ" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact"
+          }
+        }
+      }
+    },
+    "お問い合わせフォームを開く" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open Contact Form"
+          }
+        }
+      }
+    },
+    "このアプリは、YouTubeやWebページに\n透明な紙（レイヤー）を重ね\n直接文字や線を書き込めるようにした\n学習・作業サポートツールです。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ClearLayer lets you place a transparent layer over YouTube or web pages so you can draw or write directly on top.\nIt’s a simple tool designed to support learning and work tasks."
+          }
+        }
+      }
+    },
+    "このアプリを共有する" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share this app"
+          }
+        }
+      }
+    },
+    "このアプリを応援する" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Support this app"
+          }
+        }
+      }
+    },
+    "ご利用ありがとうございます！" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thank you for using ClearLayer!"
+          }
+        }
+      }
+    },
+    "ご意見や「こんな機能が欲しい」など、" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If you have feedback or feature requests,"
+          }
+        }
+      }
+    },
+    "ジェスチャー（おためし）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gestures (Experimental)"
+          }
+        }
+      }
+    },
+    "ジェスチャーを1時間解放しました" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gestures have been unlocked for 1 hour."
+          }
+        }
+      }
+    },
+    "スクリーンショットを保存しました" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Screenshot saved"
+          }
+        }
+      }
+    },
+    "スクリーンショットを保存しました。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Screenshot saved"
+          }
+        }
+      }
+    },
+    "スワイプして次へ →" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe to continue"
+          }
+        }
+      }
+    },
+    "ぜひお問い合わせフォームからお聞かせください。\n\n" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "please let us know through the contact form."
+          }
+        }
+      }
+    },
+    "ダブルタップでツール切替" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch tools with double-tap"
+          }
+        }
+      }
+    },
+    "チュートリアルを再度見る" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View Tutorial Again"
+          }
+        }
+      }
+    },
+    "トリプルタップでスクショ" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Take a screenshot with triple-tap"
+          }
+        }
+      }
+    },
+    "バージョン: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version: %@"
+          }
+        }
+      }
+    },
+    "プライバシーポリシーを開く" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read Privacy Policy"
+          }
+        }
+      }
+    },
+    "ブラウザ" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Browser"
+          }
+        }
+      }
+    },
+    "ペンと消しゴムの切り替え" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch between pen and eraser"
+          }
+        }
+      }
+    },
+    "また、ペンの色や太さを変更することもできます。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can also change the pen color and thickness."
+          }
+        }
+      }
+    },
+    "リセット" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reset"
+          }
+        }
+      }
+    },
+    "レイヤーの表示切り替え" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toggle the layer display"
+          }
+        }
+      }
+    },
+    "ロックされています" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locked"
+          }
+        }
+      }
+    },
+    "使い始める" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Started"
+          }
+        }
+      }
+    },
+    "広告を準備中…" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading ad…"
+          }
+        }
+      }
+    },
+    "広告を準備中です" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading ad…"
+          }
+        }
+      }
+    },
+    "広告を視聴すると1時間だけジェスチャー機能が有効になります" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Watching an ad enables gesture features for 1 hour."
+          }
+        }
+      }
+    },
+    "広告を視聴すると1時間だけジェスチャー機能を試せます。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Watching an ad allows you to try gesture features for 1 hour."
+          }
+        }
+      }
+    },
+    "広告視聴で1時間だけ有効化できます" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Watching an ad unlocks the feature for 1 hour."
+          }
+        }
+      }
+    },
+    "広告視聴でおためし機能を使えるようにする（1時間）" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unlock gestures by watching an ad (1 hour)"
+          }
+        }
+      }
+    },
+    "数秒後にもう一度お試しください。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Please try again in a few seconds."
+          }
+        }
+      }
+    },
+    "有効にするとダブルタップで切替が可能です" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enabling this allows switching with a double-tap."
+          }
+        }
+      }
+    },
+    "残り時間：%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time remaining: %@"
+          }
+        }
+      }
+    },
+    "現在のモード" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current Mode"
+          }
+        }
+      }
+    },
+    "画面右下にツールボックスが表示されています。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The toolbox is displayed at the bottom-right of the screen."
+          }
+        }
+      }
+    },
+    "画面左上から設定を開けます。" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You can open the settings from the top-left of the screen."
+          }
+        }
+      }
+    },
+    "色々な動画の再生・一時停止" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Play / pause videos"
+          }
+        }
+      }
+    },
+    "表示モード" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Display Mode"
+          }
+        }
+      }
+    },
+    "設定" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

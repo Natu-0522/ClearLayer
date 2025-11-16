@@ -10,6 +10,8 @@ struct TutorialPageView: View {
     @Binding var activeSheet: ActiveSheet?
     @State private var currentPage = 0
 
+    let onFinished: () -> Void
+    
     let tutorialPages = [
         TutorialPage(
             title: "ClearLayerへようこそ",
@@ -126,6 +128,12 @@ struct TutorialPageView: View {
             }
             .padding(.bottom, 20)
             .disabled(currentPage != tutorialPages.count - 1)
+        }
+        .onDisappear {
+            // 少しだけ遅延して、完全にモーダルが消えてからATTを出す
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                onFinished()
+            }
         }
     }
 }

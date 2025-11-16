@@ -17,7 +17,7 @@ struct BannerAdView: UIViewRepresentable {
         let bannerView = BannerView(adSize: adSize)
 
         // ✅ Ad Unit ID を設定（必須）
-        bannerView.adUnitID = Constants.shared.bannerAdUnitID
+        bannerView.adUnitID = AdUnit.banner
 
         // ✅ 表示元のViewControllerを設定
         bannerView.rootViewController = UIApplication.shared

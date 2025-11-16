@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var showScreenshotOverlay = false
     
     @AppStorage("hasSeenTutorial") var hasSeenTutorial = false
+    @AppStorage("adsReady") private var adsReady = false
     @State private var activeSheet: ActiveSheet? = nil
     
     
@@ -93,8 +94,14 @@ struct ContentView: View {
                 )
                 .frame(maxHeight: .infinity)
                 // ─── ここにバナー広告エリア ─────────────────────
-                BannerAdView()
-                    .frame(width: UIScreen.main.bounds.width, height: 60)
+                Group {
+                    if adsReady {
+                        BannerAdView()
+                    } else {
+                        Color.clear // プレースホルダ（高さ確保）
+                    }
+                }
+                .frame(width: UIScreen.main.bounds.width, height: 60)
             }
             // Safe area の下部にぴったり表示
             .ignoresSafeArea(edges: .bottom)
@@ -124,9 +131,9 @@ struct ContentView: View {
                 case .settings:
                     SettingsView(webVM: webVM,drawVM: drawVM, activeSheet: $activeSheet)
                 case .tutorial:
-                    TutorialPageView(activeSheet: $activeSheet)
-                case .privacy:
-                    PrivacyPolicyView()
+                    TutorialPageView(activeSheet: $activeSheet){
+                        requestATTThenStartAds()
+                    }
                 }
             }
         }
@@ -135,7 +142,6 @@ struct ContentView: View {
 enum ActiveSheet: Identifiable {
     case settings
     case tutorial
-    case privacy
     
     var id: Int { hashValue }
 }

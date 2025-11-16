@@ -1,0 +1,854 @@
+{
+  "sourceLanguage": "ja",
+  "strings": {
+    "": {},
+    "・アプリの品質向上および不具合修正のため": {},
+    "・アプリ利用状況の統計情報（クラッシュログ、利用端末情報）": {},
+    "・広告配信およびその最適化のため": {},
+    "・広告配信のための匿名情報（広告ID等）": {},
+    "/": {},
+    "© 2025 ClearLayer": {},
+    "⚙️ 設定": {},
+    "1. はじめに": {},
+    "2. 収集する情報": {},
+    "3. 利用目的": {},
+    "4. 広告について": {},
+    "5. 個人情報の第三者提供": {},
+    "6. 免責事項": {},
+    "7. プライバシーポリシーの変更": {},
+    "8. お問い合わせ": {},
+    "browsertabbar.enter_url": {
+      "comment": "ClearLayer/ClearLayer/BrowserTabBar.swift:26",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter URL"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "URLを入力"
+          }
+        }
+      }
+    },
+    "ClearLayer プライバシーポリシー（Webサイト）": {},
+    "ClearLayerとともに、\nあなたの学びをもっとスマートに。": {},
+    "contentview.save": {
+      "comment": "ClearLayer/ClearLayer/ContentView.swift:77",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screenshot saved"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スクリーンショットを保存しました"
+          }
+        }
+      }
+    },
+    "drawingcanvasview.save": {
+      "comment": "ClearLayer/ClearLayer/DrawingCanvasView.swift:46",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スクリーンショットを保存しました。"
+          }
+        }
+      }
+    },
+    "Google": {},
+    "Google のプライバシーポリシー": {},
+    "mode: %@": {},
+    "OK": {},
+    "settingmodel.locked": {
+      "comment": "ClearLayer/ClearLayer/SettingModel.swift:51",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locked"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ロックされています"
+          }
+        }
+      }
+    },
+    "settingmodel.remaining_time_format": {
+      "comment": "ClearLayer/ClearLayer/SettingModel.swift:53",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remaining %02d:%02d"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あと %02d:%02d"
+          }
+        }
+      }
+    },
+    "settingview.1": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:158",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ジェスチャーを1時間解放しました"
+          }
+        }
+      }
+    },
+    "settingview.bundlemainappversion": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:150",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version: \\(Bundle.main.appVersion)"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョン: \\(Bundle.main.appVersion)"
+          }
+        }
+      }
+    },
+    "settingview.current_browser_mode": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:31",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current browser mode"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在のブラウザモード"
+          }
+        }
+      }
+    },
+    "settingview.launch_display": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:29",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Launch display"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "起動時の表示"
+          }
+        }
+      }
+    },
+    "settingview.msg_0a3abce8": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:94",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "数秒後にもう一度お試しください。"
+          }
+        }
+      }
+    },
+    "settingview.msg_2fcd229e": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:72",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "トリプルタップでスクショ"
+          }
+        }
+      }
+    },
+    "settingview.msg_6e10d011": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:111",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "お問い合わせフォームを開く"
+          }
+        }
+      }
+    },
+    "settingview.msg_44ff6d3f": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:110",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "お問い合わせ"
+          }
+        }
+      }
+    },
+    "settingview.msg_45ade35e": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:64",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダブルタップでツール切替"
+          }
+        }
+      }
+    },
+    "settingview.msg_294103f5": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:68",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "有効にするとダブルタップで切替が可能です"
+          }
+        }
+      }
+    },
+    "settingview.msg_316449c5": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:117",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このアプリを応援する"
+          }
+        }
+      }
+    },
+    "settingview.msg_56331130": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:56",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ジェスチャー（おためし）"
+          }
+        }
+      }
+    },
+    "settingview.msg_a9d7f08c": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:91",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "広告を準備中です"
+          }
+        }
+      }
+    },
+    "settingview.msg_b24f198d": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:149",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アプリ情報"
+          }
+        }
+      }
+    },
+    "settingview.msg_b478df0a": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:77",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "広告を準備中…"
+          }
+        }
+      }
+    },
+    "settingview.msg_fb756963": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:126",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アプリを評価する"
+          }
+        }
+      }
+    },
+    "settingview.privacy_policy": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:113",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "プライバシーポリシーを読む"
+          }
+        }
+      }
+    },
+    "settingview.settings": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:20",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定"
+          }
+        }
+      }
+    },
+    "settingview.settingsremainingtimetex": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:59",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "残り時間：\\(settings.remainingTimeText)"
+          }
+        }
+      }
+    },
+    "settingview.share": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:138",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このアプリを共有する"
+          }
+        }
+      }
+    },
+    "settingview.tutorial": {
+      "comment": "ClearLayer/ClearLayer/SettingView.swift:105",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "チュートリアルを再度見る"
+          }
+        }
+      }
+    },
+    "toolbox.settings": {
+      "comment": "ClearLayer/ClearLayer/Toolbox.swift:96",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⚙️ 設定"
+          }
+        }
+      }
+    },
+    "tutorialpageview.clearlayer": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:17",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ClearLayerへようこそ"
+          }
+        }
+      }
+    },
+    "tutorialpageview.clearlayern": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:72",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ClearLayerとともに、\\nあなたの学びをもっとスマートに。"
+          }
+        }
+      }
+    },
+    "tutorialpageview.msg_1beaeee1": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:50",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "レイヤーの表示切り替え"
+          }
+        }
+      }
+    },
+    "tutorialpageview.msg_034fa932": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:69",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ご意見や「こんな機能が欲しい」など、"
+          }
+        }
+      }
+    },
+    "tutorialpageview.msg_50cb25bc": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:120",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使い始める"
+          }
+        }
+      }
+    },
+    "tutorialpageview.msg_58ba9bb2": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:53",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "また、ペンの色や太さを変更することもできます。"
+          }
+        }
+      }
+    },
+    "tutorialpageview.msg_96b15a08": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:44",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "色々な動画の再生・一時停止"
+          }
+        }
+      }
+    },
+    "tutorialpageview.msg_945f9c94": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:28",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ツールボックスについて"
+          }
+        }
+      }
+    },
+    "tutorialpageview.msg_118195bf": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:36",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ペンと消しゴムの切り替え"
+          }
+        }
+      }
+    },
+    "tutorialpageview.msg_abfa2836": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:31",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "画面右下にツールボックスが表示されています。"
+          }
+        }
+      }
+    },
+    "tutorialpageview.msg_f621aad1": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:20",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ご利用ありがとうございます！"
+          }
+        }
+      }
+    },
+    "tutorialpageview.next": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:120",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "スワイプして次へ →"
+          }
+        }
+      }
+    },
+    "tutorialpageview.nn": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:70",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ぜひお問い合わせフォームからお聞かせください。\\n\\n"
+          }
+        }
+      }
+    },
+    "tutorialpageview.reset": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:40",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reset"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リセット"
+          }
+        }
+      }
+    },
+    "tutorialpageview.settings": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:66",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "画面左上から設定を開けます。"
+          }
+        }
+      }
+    },
+    "tutorialpageview.youtubewebnnn": {
+      "comment": "ClearLayer/ClearLayer/TutorialPageView.swift:21",
+      "extractionState": "stale",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "needsReview",
+            "value": ""
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "このアプリは、YouTubeやWebページに\\n透明な紙（レイヤー）を重ね\\n直接文字や線を書き込めるようにした\\n学習・作業サポートツールです。"
+          }
+        }
+      }
+    },
+    "Web": {},
+    "YouTube": {},
+    "YT": {},
+    "アプリを評価する": {},
+    "アプリ情報": {},
+    "お問い合わせ": {},
+    "お問い合わせフォームを開く": {},
+    "このアプリは、YouTubeやWebページに\n透明な紙（レイヤー）を重ね\n直接文字や線を書き込めるようにした\n学習・作業サポートツールです。": {},
+    "このアプリを共有する": {},
+    "このアプリを応援する": {},
+    "これらの情報から、個人を特定することはありません。": {},
+    "ご利用ありがとうございます！": {},
+    "ご意見や「こんな機能が欲しい」など、": {},
+    "ご質問やお問い合わせは、アプリ内の「設定 > お問い合わせ」またはWebサイト記載のお問い合わせフォームよりご連絡ください。": {},
+    "ジェスチャー（おためし）": {},
+    "ジェスチャーを1時間解放しました": {},
+    "スクリーンショットを保存しました": {},
+    "スクリーンショットを保存しました。": {},
+    "スワイプして次へ →": {},
+    "ぜひお問い合わせフォームからお聞かせください。\n\n": {},
+    "ダブルタップでツール切替": {},
+    "チュートリアルを再度見る": {},
+    "トリプルタップでスクショ": {},
+    "バージョン: %@": {},
+    "プライバシーポリシー": {},
+    "プライバシーポリシーを読む": {},
+    "ペンと消しゴムの切り替え": {},
+    "また、ペンの色や太さを変更することもできます。": {},
+    "リセット": {},
+    "レイヤーの表示切り替え": {},
+    "使い始める": {},
+    "広告を準備中…": {},
+    "広告を準備中です": {},
+    "広告を視聴すると1時間だけジェスチャー機能が有効になります": {},
+    "広告を視聴すると1時間だけジェスチャー機能を試せます。": {},
+    "広告視聴で1時間だけ有効化できます": {},
+    "広告視聴でおためし機能を使えるようにする（1時間）": {},
+    "数秒後にもう一度お試しください。": {},
+    "有効にするとダブルタップで切替が可能です": {},
+    "本アプリ「ClearLayer」（以下、「本アプリ」）は、ユーザーのプライバシー保護を重要視しています。本ポリシーでは、本アプリにおける個人情報・利用情報の取り扱いについて説明します。": {},
+    "本アプリでは、Google AdMobによる広告を表示します。Googleやそのパートナーは、広告配信のためにクッキーや広告IDを利用することがあります。詳細は以下をご覧ください。": {},
+    "本アプリの利用によって発生した損害について、開発者は一切の責任を負いません。": {},
+    "本アプリは、以下の情報を収集する場合があります。": {},
+    "本アプリは、法令に基づく場合を除き、個人情報を第三者に提供しません。": {},
+    "本ポリシーの内容は、必要に応じて変更されることがあります。変更後のポリシーは、本アプリまたは本ページに掲載した時点から効力を生じます。": {},
+    "残り時間：%@": {},
+    "現在のブラウザモード": {},
+    "画面右下にツールボックスが表示されています。": {},
+    "画面左上から設定を開けます。": {},
+    "色々な動画の再生・一時停止": {},
+    "設定": {},
+    "起動時の表示": {},
+    "閉じる": {}
+  },
+  "version": "1.0"
+}

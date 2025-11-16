@@ -48,15 +48,16 @@ class SettingModel: NSObject, ObservableObject, FullScreenContentDelegate {
 
     var remainingTimeText: String {
         let remain = gestureUnlockUntil - now.timeIntervalSince1970
-        if remain <= 0 { return "ロックされています" }
+        if remain <= 0 { return String(localized: "ロックされています") }
         let m = Int(remain) / 60, s = Int(remain) % 60
-        return String(format: "あと %02d:%02d", m, s)
+        return String(format: "%02d:%02d", m, s)
     }
 
     func unlockForOneHour() {
         gestureUnlockUntil = Date().addingTimeInterval(3600).timeIntervalSince1970
     }
 
+    
     func updateUnlockStatusIfNeeded() {
         if !isGestureUnlocked {
             useDoubleTapGesture = false
@@ -69,7 +70,7 @@ class SettingModel: NSObject, ObservableObject, FullScreenContentDelegate {
     // MARK: - Ads
     func loadRewardAd() {
         let request = Request()
-        RewardedAd.load(with: Constants.shared.rewardedAdUnitID, request: request) { [weak self] ad, _ in
+        RewardedAd.load(with: AdUnit.rewarded, request: request) { [weak self] ad, _ in
             DispatchQueue.main.async {
                 self?.rewardedAd = ad
                 self?.rewardedAd?.fullScreenContentDelegate = self

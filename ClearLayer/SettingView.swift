@@ -26,13 +26,13 @@ struct SettingsView: View {
 
             Form {
                 // 起動時表示
-                Section(header: Text("起動時の表示")) {
+                Section(header: Text("表示モード")) {
                     HStack {
-                        Text("現在のブラウザモード")
+                        Text("現在のモード")
                         Spacer()
                         Picker("", selection: $drawVM.mode) {
                             Text("YouTube").tag("youtube")
-                            Text("Google").tag("browser")
+                            Text("ブラウザ").tag("browser")
                         }
                         .pickerStyle(.segmented)
                         .frame(width: 150)
@@ -109,8 +109,9 @@ struct SettingsView: View {
                 // 問い合わせ
                 Section(header: Text("お問い合わせ")) {
                     Link("お問い合わせフォームを開く",
-                         destination: URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfdipzq4W-EEVMZAZ3U08hB3ucyinrNjNLU8hH2Bt1GOa5TRQ/viewform?usp=header")!)
-                    Button("プライバシーポリシーを読む") { activeSheet = .privacy }
+                         destination: URL(string: String(localized: "https://docs.google.com/forms/d/e/1FAIpQLSfdipzq4W-EEVMZAZ3U08hB3ucyinrNjNLU8hH2Bt1GOa5TRQ/viewform?usp=header"))!)
+                    Link("プライバシーポリシーを開く",
+                         destination: URL(string: String(localized: "https://sites.google.com/view/clearlayer/%E3%83%9B%E3%83%BC%E3%83%A0"))!)
                 }
 
                 // 応援
@@ -147,7 +148,7 @@ struct SettingsView: View {
 
                 // 情報
                 Section(header: Text("アプリ情報")) {
-                    Text("バージョン: 1.0.0")
+                    Text("バージョン: \(Bundle.main.appVersion)")
                     Text("© 2025 ClearLayer")
                 }
             }
