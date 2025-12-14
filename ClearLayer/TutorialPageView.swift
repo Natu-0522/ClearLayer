@@ -14,7 +14,7 @@ struct TutorialPageView: View {
     
     let tutorialPages = [
         TutorialPage(
-            title: "ClearLayerへようこそ",
+            title: String(localized: "tutorial.welcome.title"),
             descriptionView: AnyView(
                         VStack(spacing: 12) {
                             Text("ご利用ありがとうございます！")
@@ -25,7 +25,7 @@ struct TutorialPageView: View {
                     )
         ),
         TutorialPage(
-            title: "ツールボックスについて",
+            title: String(localized: "tutorial.toolbox.title"),
             descriptionView: AnyView(
                         VStack(spacing: 12) {
                             Text("画面右下にツールボックスが表示されています。")
@@ -58,7 +58,7 @@ struct TutorialPageView: View {
                     )
         ),
         TutorialPage(
-            title: "設定とご意見について",
+            title: String(localized: "tutorial.settings.title"),
             descriptionView: AnyView(
                         VStack(spacing: 12) {
                             HStack(spacing: 8) {

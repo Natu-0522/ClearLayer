@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  ClearLayer
+
+  Created by 中里祐希 on 2025/12/14.
+  
+*/
+"NSPhotoLibraryAddUsageDescription" = "スクリーンショットをフォトライブラリに保存するため、写真への書き込みを許可してください。";
+"NSUserTrackingUsageDescription" = "アプリの広告最適化のため、トラッキングの許可をお願いします。";

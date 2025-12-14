@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  ClearLayer
+
+  Created by 中里祐希 on 2025/12/14.
+  
+*/
+"NSPhotoLibraryAddUsageDescription" = "ClearLayer needs permission to save screenshots to your photo library.";
+"NSUserTrackingUsageDescription" = "Allow tracking so we can optimize ads and support future development of ClearLayer.";

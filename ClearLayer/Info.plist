@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>スクリーンショットをフォトライブラリに保存するため、写真への書き込みを許可してください。</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>アプリの広告最適化のため、トラッキングの許可をお願いします。</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-8866672716864480~3476314147</string>
 	<key>SKAdNetworkItems</key>
@@ -11,13 +15,5 @@
 			<string>cstr6suwn9.skadnetwork</string>
 		</dict>
 	</array>
-    <key>CFBundleDevelopmentRegion</key>
-    <string>ja</string>
-
-    <key>CFBundleLocalizations</key>
-    <array>
-        <string>ja</string>
-        <string>en</string>
-    </array>
 </dict>
 </plist>
